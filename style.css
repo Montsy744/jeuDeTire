@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+/*Le rem permet a ce que la taille de la police change en fonction de la demande de l'utilisateur*/
+html {font-size: 62.5%;           /*1rem == 10px*/}
+body {
+    font-family: arial;
+    color: white;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(45deg, #8d0000, #44006b,#270164, #010433);
+    background-attachment: fixed;
+    background-size: 500%;
+    animation: backgroundAnimation 4s infinite ease;
+}
+@keyframes backgroundAnimation {
+    0%{
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+#btn-red, #btn-blue {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+#btn-red {
+    background-color: red;
+    animation-name: rouge;
+}
+
+#btn-blue {
+    background-color: blue;
+    animation-name: bleu;
+}
+
+@keyframes rouge {
+    0% { left: var(--red-left1); top: var(--red-top1); }
+    25% { left: var(--red-left2); top: var(--red-top2); }
+    50% { left: var(--red-left3); top: var(--red-top3); }
+    75% { left: var(--red-left4); top: var(--red-top4); }
+    100% { left: var(--red-left1); top: var(--red-top1); }
+}
+
+@keyframes bleu {
+    0% { left: var(--blue-left1); top: var(--blue-top1); }
+    25% { left: var(--blue-left2); top: var(--blue-top2); }
+    50% { left: var(--blue-left3); top: var(--blue-top3); }
+    75% { left: var(--blue-left4); top: var(--blue-top4); }
+    100% { left: var(--blue-left1); top: var(--blue-top1); }
+}
